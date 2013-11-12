@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\WeaponTrigger.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Battle\MovementBattle.cs" Line="118" Column="56" />
+      <File FileName="Assets\Scripts\Battle\Weapon.cs" Line="6" Column="8" />
+      <File FileName="Assets\Scripts\Battle\WeaponTrigger.cs" Line="8" Column="1" />
+      <File FileName="Assets\Scripts\Battle\Enemy.cs" Line="63" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
