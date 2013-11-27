@@ -13,7 +13,12 @@ public class ButtonLevelUp : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+	void OnMouseEnter(){
+		this.guiTexture.color = Color.magenta;
+	}
+	void OnMouseExit(){
+		this.guiTexture.color = Color.gray;
+	}
 	// Update is called once per frame
 	void OnMouseDown () {
 		CharactersStat cs = stats.GetComponent(typeof(CharactersStat)) as CharactersStat;

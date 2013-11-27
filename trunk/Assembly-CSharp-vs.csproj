@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{37D32D9B-24BF-60E1-0CAC-E48305A7CA0E}</ProjectGuid>
+	<ProjectGuid>{0BE8E511-D506-A1D0-E67D-923A5ED26D39}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -61,8 +61,13 @@
      <Compile Include="Assets\Scripts\Extra\FadeInOut.cs" />
      <Compile Include="Assets\Scripts\Extra\LevelUp.cs" />
      <Compile Include="Assets\Scripts\Extra\TestGameSave.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Inventory\kk.cs" />
+     <Compile Include="Assets\Scripts\Menu\BackButton.cs" />
+     <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menu\SaveButton.cs" />
+     <Compile Include="Assets\Scripts\Menu\StatsButton.cs" />
      <Compile Include="Assets\Scripts\Overworld\CameraObj.cs" />
-     <Compile Include="Assets\Scripts\Overworld\Menu.cs" />
      <Compile Include="Assets\Scripts\Overworld\MovementWorld.cs" />
      <Compile Include="Assets\Scripts\Overworld\OverWordGUI.cs" />
      <Compile Include="Assets\Scripts\ScenesIndexes.cs" />
