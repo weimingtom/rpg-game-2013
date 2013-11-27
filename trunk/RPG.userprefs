@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory\Inventory.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Menu\SaveButton.cs" Line="16" Column="18" />
+      <File FileName="Assets\Scripts\Menu\Menu.cs" Line="17" Column="37" />
+      <File FileName="Assets\Scripts\Extra\ButtonLevelUp.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Menu\BackButton.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\Menu\StatsButton.cs" Line="17" Column="118" />
+      <File FileName="Assets\Scripts\Extra\LevelUp.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\Extra\CharactersStat.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Inventory.cs" Line="30" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
