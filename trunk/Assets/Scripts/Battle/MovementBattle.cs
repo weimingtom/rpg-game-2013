@@ -33,6 +33,7 @@ public class MovementBattle : MonoBehaviour {
 
 	float delay = 1.6f;
 	public MovementWorld mw;
+	public GameObject dungeon;
 	
 	
 	
@@ -93,7 +94,7 @@ public class MovementBattle : MonoBehaviour {
 			escTime -= Time.deltaTime;
 			if(escTime <= 0){
 				escaped = true;
-				world.SetActive(true);
+				ActiveWorld();
 				battleController.DestroyParty();
 				emptyBattle.SetActive(false);
 				playerOW.SetActive(true);
@@ -138,5 +139,12 @@ public class MovementBattle : MonoBehaviour {
 			weapon.animation.Play();
 		}
 
+	}
+	void ActiveWorld(){
+		if(mw.currentWorld == "Overworld"){
+			world.SetActive(true);
+		}else if(mw.currentWorld == "Dungeon"){
+			dungeon.SetActive(true);
+		}
 	}
 }
