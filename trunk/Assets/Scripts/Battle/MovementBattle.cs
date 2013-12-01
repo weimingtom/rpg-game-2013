@@ -7,7 +7,7 @@ public class MovementBattle : MonoBehaviour {
 	public GameObject stats;
 	int damage;
 	public TextMesh damageMesh;
-	
+	public GameObject playerOW;
 	float timeText = 1f;			//Time the text can be seen
 	
 	bool damaged = false;
@@ -32,7 +32,7 @@ public class MovementBattle : MonoBehaviour {
 	private Vector3 right;
 
 	float delay = 1.6f;
-	
+	public MovementWorld mw;
 	
 	
 	
@@ -96,6 +96,8 @@ public class MovementBattle : MonoBehaviour {
 				world.SetActive(true);
 				battleController.DestroyParty();
 				emptyBattle.SetActive(false);
+				playerOW.SetActive(true);
+				mw.enabled = true;
 			}
 		}
 		else{
