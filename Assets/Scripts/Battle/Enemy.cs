@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour {
 	float mult;
 	float timeText = 1f;
 	public GameObject player;
-	Vector3 dif;
 	float attTime = 0.7f;
 	float delayTime = 1.6f;
 	bool damaged = false;
@@ -24,6 +23,7 @@ public class Enemy : MonoBehaviour {
 	public bool hitted = false;
 	public bool CanBeHit = true;
 	float timeHitted = 6f;
+	
 	
 	void Start () {
 		player = GameObject.FindWithTag("Player");
@@ -38,7 +38,6 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		BattleController bc = battleCtrller.GetComponent(typeof(BattleController)) as BattleController;
 		if(player!=null){
-			dif = transform.position - player.transform.position;
 			MovementBattle mb = player.GetComponent(typeof(MovementBattle)) as MovementBattle;
 			if(mb.escaped){//??
 				Destroy(gameObject);
@@ -59,7 +58,7 @@ public class Enemy : MonoBehaviour {
 		if(hitted){
 			CanBeHit = false;
 			timeHitted -= Time.deltaTime;
-			if( timeHitted <=0){
+			if(timeHitted <=0 ){
 				timeHitted = 6f;
 				hitted = false;
 				CanBeHit = true;

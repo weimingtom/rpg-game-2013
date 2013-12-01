@@ -6,12 +6,13 @@ public class Weapon : MonoBehaviour {
 	public bool attack = false;
 	private Quaternion originalRot;
 	public float easing = 3;
-	// Use this for initialization
+	
+/*	
 	void Start () {
 		originalRot = transform.localRotation;
 	}
 	
-	// Update is called once per frame
+	
 	void FixedUpdate () 
 	{
 		if (attack)
@@ -31,5 +32,5 @@ public class Weapon : MonoBehaviour {
 	public void Attack()
 	{
 		attack = true;
-	}
+	}*/
 }
