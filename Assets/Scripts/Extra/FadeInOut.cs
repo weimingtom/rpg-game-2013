@@ -5,11 +5,13 @@ public class FadeInOut : MonoBehaviour {
 	float alphaFadeValue = 0f;
 	
 	public GameObject bkScreen;
+	public GameObject playerOW;
 	public float randEncounterTime;
 	public GameObject spawner;
 	public GameObject battle;
 	public GameObject emptyWorld;
 	public GameObject playerBattle;
+	public GameObject dungeon;
 	public BattleController battleController;
 	public MovementWorld mw;
 	
@@ -33,8 +35,16 @@ public class FadeInOut : MonoBehaviour {
 			mb.escaped = false;
 			battleController.CharSpawing(playerBattle,spawner);
 			battleController.EnemyGenerator();
-			emptyWorld.SetActive(false);
+			DesactiveWorld();
+			playerOW.SetActive(false);
 			this.enabled = false;
+		}
+	}
+	void DesactiveWorld(){
+		if(mw.currentWorld == "Overworld"){
+			emptyWorld.SetActive(false);
+		}else if(mw.currentWorld == "Dungeon"){
+			dungeon.SetActive(false);
 		}
 	}
 }

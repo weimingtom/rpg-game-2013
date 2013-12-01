@@ -9,7 +9,6 @@ public class BattleController : StateBattle {
 	GameObject party;
 	//public int totalExp;
 	public int numEnemies;
-	public GameObject overWorld;
 	public Scroll scroll;
 	public GameObject player;
 	public GameObject weapon;
@@ -18,7 +17,10 @@ public class BattleController : StateBattle {
 	//public int totalGil;
 	public GameObject LevelUp;
 	public Bridge bridge;
-	
+	public GameObject playerOW;
+	public GameObject outFloor;
+	public Material mat1;
+	public Material mat2;
 	
 	public void EnemyGenerator(){
 		int numEnemy = Random.Range(3,6);
@@ -88,5 +90,13 @@ public class BattleController : StateBattle {
 	void OnGUI(){
 		CharactersStat cs = stats.GetComponent(typeof(CharactersStat)) as CharactersStat;
 		statsText.text = "HP: "+cs.hp+"  "+"MP: "+cs.mp;
+	}
+	void Update(){
+		MovementWorld mw = playerOW.GetComponent(typeof(MovementWorld)) as MovementWorld;
+		if(mw.currentWorld == "Overworld"){
+			outFloor.renderer.material = mat1;
+		}else if(mw.currentWorld == "Dungeon"){
+			outFloor.renderer.material = mat2;
+		}
 	}
 }

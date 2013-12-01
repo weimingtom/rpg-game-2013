@@ -16,6 +16,10 @@ public class MovementWorld : MonoBehaviour {
 	public GameObject weapon;
 	public BattleController battleController;
 	public FadeInOut fade;
+	public GameObject dungeon;
+	public Transform charPosExitCave;
+	public Transform charCavePosEntrance;
+	public string currentWorld = "Overworld";
 	
 	public GameObject menu;
 	public GameObject overWorld;
@@ -47,7 +51,8 @@ public class MovementWorld : MonoBehaviour {
 		
 		if(Input.GetKeyDown(KeyCode.Return)){
 			menu.SetActive(true);
-			overWorld.SetActive(false);
+			DesactiveWorld();
+			this.gameObject.SetActive(false);
 		}
 		
 		if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift)){
@@ -78,5 +83,27 @@ public class MovementWorld : MonoBehaviour {
 			randEncounterTime = Random.Range(7,15);
 		}
 
+	}
+	void OnTriggerEnter(Collider coll){
+		if(coll.gameObject.tag.Equals("CaveEntrance")){
+			dungeon.SetActive(true);
+			currentWorld = "Dungeon";
+			transform.position = charCavePosEntrance.position;
+			overWorld.SetActive(false);
+
+		}
+		if(coll.gameObject.tag.Equals("CaveDoor")){
+			overWorld.SetActive(true);
+			currentWorld = "Overworld";
+			transform.position = charPosExitCave.position;
+			dungeon.SetActive(false);
+		}
+	}
+	void DesactiveWorld(){
+		if(currentWorld == "Overworld"){
+			emptyWorld.SetActive(false);
+		}else if(currentWorld == "Dungeon"){
+			dungeon.SetActive(false);
+		}
 	}
 }
