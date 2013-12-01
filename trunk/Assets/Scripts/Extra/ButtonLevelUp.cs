@@ -3,12 +3,14 @@ using System.Collections;
 
 public class ButtonLevelUp : MonoBehaviour {
 	public GameObject overworld;
+	public GameObject dungeon;
 	//public GameObject battle;
 	public GameObject playerOverW;
 	public GameObject stats;
 	public GameObject LevelUp;
 	public GUIText lvlUpText;
 	public Bridge bridge;
+	public MovementWorld mw;
 	// Use this for initialization
 	void Start () {
 	
@@ -29,8 +31,16 @@ public class ButtonLevelUp : MonoBehaviour {
 		bridge.totalExp = 0;
 		bridge.totalGil = 0;
 		this.enabled = false;
-		overworld.SetActive(true);
+		ActiveWorld();
+		playerOverW.SetActive(true);
 		LevelUp.SetActive(false);
 		
+	}
+	void ActiveWorld(){
+		if(mw.currentWorld == "Overworld"){
+			overworld.SetActive(true);
+		}else if(mw.currentWorld == "Dungeon"){
+			dungeon.SetActive(true);
+		}
 	}
 }

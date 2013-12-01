@@ -1,16 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Overworld\Menu.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Overworld\MovementWorld.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu\SaveButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menu\Menu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Extra\ButtonLevelUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menu\BackButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menu\StatsButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Extra\LevelUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Extra\CharactersStat.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Overworld\Menu.cs" Line="4" Column="1" />
+      <File FileName="Assets\Scripts\Overworld\MovementWorld.cs" Line="92" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

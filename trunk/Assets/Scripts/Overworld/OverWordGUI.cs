@@ -9,7 +9,7 @@ public class OverWordGUI : MonoBehaviour {
 	
 	void Start () {
 		////////////////////////////////////////
-		player = GameObject.FindWithTag("Player");
+		player = GameObject.FindWithTag("PlayerOW");
 		TestGameSave.LoadGame(player.transform);
 		////////////////////////////////////////
 	}
