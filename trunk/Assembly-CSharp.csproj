@@ -52,9 +52,11 @@
      <Compile Include="Assets\Scripts\Battle\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemySMachine.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemyWalk.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemyWeapon.cs" />
      <Compile Include="Assets\Scripts\Battle\MovementBattle.cs" />
      <Compile Include="Assets\Scripts\Battle\Scroll.cs" />
      <Compile Include="Assets\Scripts\Battle\State.cs" />
+     <Compile Include="Assets\Scripts\Battle\TriggerFinder.cs" />
      <Compile Include="Assets\Scripts\Battle\Weapon.cs" />
      <Compile Include="Assets\Scripts\Battle\WeaponPos.cs" />
      <Compile Include="Assets\Scripts\Battle\WeaponTrigger.cs" />
@@ -65,6 +67,9 @@
      <Compile Include="Assets\Scripts\Extra\TestGameSave.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\kk.cs" />
+     <Compile Include="Assets\Scripts\Items\IronSword.cs" />
+     <Compile Include="Assets\Scripts\Items\LightSword.cs" />
+     <Compile Include="Assets\Scripts\Items\WoodenSword.cs" />
      <Compile Include="Assets\Scripts\Menu\BackButton.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveButton.cs" />
      <Compile Include="Assets\Scripts\Menu\StatsButton.cs" />

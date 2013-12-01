@@ -23,13 +23,15 @@ public class MovementBattle : MonoBehaviour {
 	public BattleController battleController;
 	public bool escaped = false;
 	float escTime;	//time for scaping battle
-	public Weapon weapon;
+	public Transform weapon;
 	
 	private Vector3 moveDirection;
 	public float moveSpd = 8;
 
 	private Vector3 forward;
 	private Vector3 right;
+
+	float delay = 1.6f;
 	
 	
 	
@@ -63,16 +65,14 @@ public class MovementBattle : MonoBehaviour {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x,8f,rigidbody.velocity.z);
 			jumping = true;
 		}
-		
-		/*if(Input.GetKey(KeyCode.M)){
-			attacking = true;
-		}else{
-			attacking = false;
-		}*/
+
+
 		if(Input.GetKeyDown(KeyCode.M)){
-			weapon.Attack();
+			Attack();
 			attacking = true;
 		}
+
+
 		battleController.CheckEnemies();
 		if(damaged){
 			timeText -= Time.deltaTime;
@@ -131,6 +131,10 @@ public class MovementBattle : MonoBehaviour {
 	}
 	
 	
-	public void StartUp(){
+	public void Attack(){
+		if(!weapon.animation.isPlaying){
+			weapon.animation.Play();
+		}
+
 	}
 }
