@@ -62,7 +62,11 @@
      <Compile Include="Assets\Scripts\Battle\WeaponTrigger.cs" />
      <Compile Include="Assets\Scripts\Extra\ButtonLevelUp.cs" />
      <Compile Include="Assets\Scripts\Extra\CharactersStat.cs" />
+     <Compile Include="Assets\Scripts\Extra\Chest.cs" />
+     <Compile Include="Assets\Scripts\Extra\DialogueText.cs" />
+     <Compile Include="Assets\Scripts\Extra\DungeonManager.cs" />
      <Compile Include="Assets\Scripts\Extra\FadeInOut.cs" />
+     <Compile Include="Assets\Scripts\Extra\Ladder.cs" />
      <Compile Include="Assets\Scripts\Extra\LevelUp.cs" />
      <Compile Include="Assets\Scripts\Extra\TestGameSave.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -70,6 +74,9 @@
      <Compile Include="Assets\Scripts\Items\IronSword.cs" />
      <Compile Include="Assets\Scripts\Items\LightSword.cs" />
      <Compile Include="Assets\Scripts\Items\WoodenSword.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\ExitGameButton.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\LoadGameButton.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\NewGameButton.cs" />
      <Compile Include="Assets\Scripts\Menu\BackButton.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveButton.cs" />
      <Compile Include="Assets\Scripts\Menu\StatsButton.cs" />
