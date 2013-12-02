@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour {
 		}
 		
 		if(Input.GetKeyDown(KeyCode.M)){
-			TestGameSave.SaveGame(player);
+			//TestGameSave.SaveGame(player);
 		}
 		
 		if(Input.GetKeyDown(KeyCode.P)){

@@ -20,11 +20,12 @@ public class MovementWorld : MonoBehaviour {
 	public Transform charPosExitCave;
 	public Transform charCavePosEntrance;
 	public string currentWorld = "Overworld";
-	
+	public Light light;
 	public GameObject menu;
 	public GameObject overWorld;
-	
-	
+	public CharactersStat cs;
+	public GUIText text;
+
 	void Start () {
 		movSpeed = walkSpeed;
 		randEncounterTime = Random.Range(7,15);
@@ -89,6 +90,7 @@ public class MovementWorld : MonoBehaviour {
 			dungeon.SetActive(true);
 			currentWorld = "Dungeon";
 			transform.position = charCavePosEntrance.position;
+			light.enabled = false;
 			overWorld.SetActive(false);
 
 		}
@@ -96,7 +98,18 @@ public class MovementWorld : MonoBehaviour {
 			overWorld.SetActive(true);
 			currentWorld = "Overworld";
 			transform.position = charPosExitCave.position;
+			light.enabled = true;
 			dungeon.SetActive(false);
+		}
+	}
+	void OnTriggerStay(Collider coll){
+		if(coll.gameObject.tag.Equals("Chest")){
+			Chest chest = coll.gameObject.GetComponent(typeof(Chest)) as Chest;
+			if(Input.GetKeyDown(KeyCode.M) && !chest.opened){
+				cs.Gils += chest.gilsInChest;
+				chest.opened = true;
+				text.text = "Obtained "+chest.gilsInChest+" Gils!";
+			}
 		}
 	}
 	void DesactiveWorld(){

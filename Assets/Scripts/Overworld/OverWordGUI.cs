@@ -3,14 +3,15 @@ using System.Collections;
 
 public class OverWordGUI : MonoBehaviour {
 	public GUIText statsText;
-	public GameObject stats;
+	GameObject stats;
 	
 	GameObject player;
 	
 	void Start () {
 		////////////////////////////////////////
 		player = GameObject.FindWithTag("PlayerOW");
-		TestGameSave.LoadGame(player.transform);
+		stats = GameObject.FindWithTag("Stats");
+		//TestGameSave.LoadGame(player.transform);
 		////////////////////////////////////////
 	}
 	
