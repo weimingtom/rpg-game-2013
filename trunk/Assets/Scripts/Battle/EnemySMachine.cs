@@ -23,13 +23,16 @@ public class EnemySMachine : MonoBehaviour {
 		}
 	}
 	
-
+	/*
 	void Update () {
 	
-	}
+	}*/
 	
 	public void ChangeState(string state){
 		State nextState = GetComponent(state) as State;
+		if (nextState == prevState){
+			return;
+		}
 		if(nextState != null){
 			prevState.OnExitState();
 			nextState.OnEnterState();

@@ -8,8 +8,8 @@ public class EnemyAttack : State {
 	public Transform w1;
 	public Transform w2;
 	
-	float attTime = 0;
-	int attCount = 2;
+
+	public string nextState;
 	public float timeBetwAtts = 2f;
 	
 	bool hit;
@@ -35,36 +35,13 @@ public class EnemyAttack : State {
 				timeBetwAtts = 2f;
 			}
 			else{
-				eMachine.ChangeState("EnemyWalk");
+				eMachine.ChangeState(nextState);
 			}
 		}
 		else{
 			OnExitState();
 			timeBetwAtts -= Time.deltaTime;
 		}
-
-		Debug.Log(trigger.Found());
-		/*if(trigger.Found()){
-			if(attTime > timeBetwAtts){
-				if(attCount > 0){
-					OnEnterState();
-					Debug.Log("attCount>0");
-				}
-				else{
-					attTime = 0;
-					attCount = 2;
-					Debug.Log("attCount=0");
-				}
-			}
-			else{
-				attTime += Time.deltaTime;
-				Debug.Log("Not att");
-			}
-		}
-		else{
-			eMachine.ChangeState("EnemyWalk");
-		}
-		Debug.Log(attCount+"  "+attTime);*/
 	}
 	
 	
@@ -74,12 +51,6 @@ public class EnemyAttack : State {
 		else{
 			w1.animation.Play("EnemyW1");
 			w2.animation.Play("EnemyW2");
-			/*
-			MovementBattle mb = player.GetComponent(typeof(MovementBattle)) as MovementBattle;
-			gameObject.renderer.material.color = Color.red;
-			mb.CharacterDamage();
-			*/
-			//attCount--;
 		}
 	}
 

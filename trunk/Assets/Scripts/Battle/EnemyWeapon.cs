@@ -4,15 +4,6 @@ using System.Collections;
 public class EnemyWeapon : MonoBehaviour {
 
 
-	void Start () {
-	
-	}
-	
-
-	void Update () {
-	
-	}
-
 	void OnTriggerEnter(Collider coll){
 		if(coll != null)
 			if(coll.tag.Equals("Player")){
@@ -22,6 +13,6 @@ public class EnemyWeapon : MonoBehaviour {
 			}
 			else{
 				gameObject.renderer.material.color = Color.gray;
-		}Debug.Log(coll.tag);
+		}
 	}
 }
