@@ -4,9 +4,9 @@ using System.Collections;
 public class EnemyWalk : State {
 
 	GameObject player;
-	Vector3 dif;
 	float speed = 4.8f;
 	float rotateTime;
+	public string nextState;
 
 	Quaternion rot;
 	
@@ -18,7 +18,6 @@ public class EnemyWalk : State {
 	
 	void Update () {
 		if(player != null){
-			dif = player.transform.position - transform.position;
 			rot = transform.rotation;
 			transform.LookAt(player.transform);
 
@@ -30,7 +29,7 @@ public class EnemyWalk : State {
 			}
 
 			if(trigger.Found()){
-				eMachine.ChangeState("EnemyAttack");
+				eMachine.ChangeState(nextState);
 			}
 		}
 	}

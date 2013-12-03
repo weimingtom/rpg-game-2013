@@ -50,9 +50,11 @@
      <Compile Include="Assets\Scripts\Battle\DamageTextScr.cs" />
      <Compile Include="Assets\Scripts\Battle\Enemy.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemyMagic.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemySMachine.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemyWalk.cs" />
      <Compile Include="Assets\Scripts\Battle\EnemyWeapon.cs" />
+     <Compile Include="Assets\Scripts\Battle\Magic.cs" />
      <Compile Include="Assets\Scripts\Battle\MovementBattle.cs" />
      <Compile Include="Assets\Scripts\Battle\Scroll.cs" />
      <Compile Include="Assets\Scripts\Battle\State.cs" />

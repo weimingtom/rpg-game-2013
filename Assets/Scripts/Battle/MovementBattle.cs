@@ -13,11 +13,10 @@ public class MovementBattle : MonoBehaviour {
 	bool damaged = false;
 	
 	bool jumping = false;
-	public Bridge bridge;
+	
 	public GameObject enemy;
 	Vector3 dif;					//Difference between the enemy and the character position
 	public bool attacking = false;
-	float attTime = 2f;
 	public GameObject world;		//Empty GameObject
 	public GameObject emptyBattle;
 	public BattleController battleController;
@@ -31,7 +30,6 @@ public class MovementBattle : MonoBehaviour {
 	private Vector3 forward;
 	private Vector3 right;
 
-	float delay = 1.6f;
 	public MovementWorld mw;
 	public GameObject dungeon;
 	
@@ -97,8 +95,6 @@ public class MovementBattle : MonoBehaviour {
 				ActiveWorld();
 				battleController.DestroyParty();
 				emptyBattle.SetActive(false);
-				bridge.totalExp = 0;
-				bridge.totalGil = 0;
 				playerOW.SetActive(true);
 				mw.enabled = true;
 			}
