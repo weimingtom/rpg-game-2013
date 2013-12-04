@@ -32,13 +32,20 @@ public class MovementBattle : MonoBehaviour {
 
 	public MovementWorld mw;
 	public GameObject dungeon;
+
+
+	public ParticleSystem cura;
+	public ParticleSystem fire;
+	float cooldown = 4f;
+	float timer = 0;
 	
-	
+	CharactersStat cs;
 	
 	
 	
 	void Start () {
 		stats = GameObject.FindWithTag("Stats");
+		cs = GameObject.FindWithTag("Stats").GetComponent<CharactersStat>();
 	}
 	
 	
@@ -46,7 +53,6 @@ public class MovementBattle : MonoBehaviour {
 		CharactersStat cs = stats.GetComponent(typeof(CharactersStat))as CharactersStat;
 		
 		enemy = GameObject.FindWithTag("Enemy");
-		//dif = transform.position - enemy.transform.position;
 		
 		//Walk
 		float v = Input.GetAxis("Vertical");
@@ -66,11 +72,18 @@ public class MovementBattle : MonoBehaviour {
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.M)){
+		if(Input.GetKeyDown(KeyCode.K)){
 			Attack();
 			attacking = true;
 		}
 
+		if(Input.GetKeyDown(KeyCode.M)){
+			Fire();
+		}
+
+		if(Input.GetKeyDown(KeyCode.N)){
+			Cura();
+		}
 
 		battleController.CheckEnemies();
 		if(damaged){
@@ -86,7 +99,13 @@ public class MovementBattle : MonoBehaviour {
 			Destroy(damageMesh);
 			Destroy(this.gameObject);
 		}
-		
+
+
+		if(timer > 0f){
+			timer -= Time.deltaTime;
+		}
+
+
 		//Run from battle
 		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.KeypadEnter)){	
 			escTime -= Time.deltaTime;
@@ -136,8 +155,29 @@ public class MovementBattle : MonoBehaviour {
 		if(!weapon.animation.isPlaying){
 			weapon.animation.Play();
 		}
-
 	}
+
+
+	public void Fire(){
+		if(timer <= 0){
+			if(cs.mp - fire.GetComponent<MPCost>().cost >= 0){
+				cs.mp -= fire.GetComponent<MPCost>().cost;
+				Instantiate(fire, GameObject.FindWithTag("Enemy").transform.position, fire.transform.rotation);
+			}
+			timer = cooldown;
+		}
+	}
+
+
+	public void Cura(){
+		if(timer <= 0)
+			if(cs.mp - fire.GetComponent<MPCost>().cost >= 0){
+				cs.mp -= cura.GetComponent<MPCost>().cost;
+				Instantiate(cura, gameObject.transform.position, cura.transform.rotation);
+			}
+	}
+
+
 	void ActiveWorld(){
 		if(mw.currentWorld == "Overworld"){
 			world.SetActive(true);

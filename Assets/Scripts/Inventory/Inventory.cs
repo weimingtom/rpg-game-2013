@@ -1,45 +1,68 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour {
 
-	public string list;
-	string buffer = "";
-	TextMesh[] text;
+	public List<GameObject> itemList;
 	
-	ArrayList items = new ArrayList();
-	
-	void Start () {
-		if(!PlayerPrefs.HasKey("Inventory")){
-			list = "";
-		}
-		else{
-			PlayerPrefs.GetString("Inventory");
-		}
+	Vector3 offset = new Vector3(0f, -0.08f, 0f);
+	Vector3 startPos = new Vector3(-0.36f, 0.3f, -0.8f);
+	public TextMesh itName;
+
+	public GameObject menu;
+
+	void Start(){
+		if(ES2.Exists("Inventory"))
+		   ES2.LoadList<GameObject>("Inventory");
+		else
+			itemList = new List<GameObject>();
+	}
+
+
+	void Update(){
+		//ES2.Save(itemList, "Invertory"); // Move!!
 	}
 	
-	
-	void Update () {
-		for(int i = 0; i < list.Length; i++){
-			if(list[i] == ' '){
-				text[i].text = buffer;
-				buffer = "";
+
+
+
+	public void AddItem(GameObject item){
+		for(int i = 0; i < itemList.Count; i++){print ("FOR"+itemList[i].name+" "+item.name);
+			if(itemList[i].name == item.name){
+				itemList[i].GetComponent<QuantityText>().q++;
+				itemList[i].GetComponent<InventoryText>().Add();
+				return;
 			}
 		}
+		
+		TextMesh newItem;
+		newItem = Instantiate(itName) as TextMesh;
+		newItem.transform.parent = menu.transform;
+		newItem.transform.rotation = itName.transform.rotation;
+		newItem.transform.localScale = itName.transform.localScale;
+		
+		if(itemList.Count == 0){
+			newItem.transform.localPosition = startPos;
+		}
+		else{
+			newItem.transform.localPosition = itemList[itemList.Count-1].transform.position + offset;
+		}
+
+		itemList.Add(newItem.gameObject);
+		itemList[itemList.Count-1].GetComponent<QuantityText>().q = 1;
+		itemList[itemList.Count-1].AddComponent(item.name);
+
+		newItem.GetComponent<InventoryText>().SetItem(item, itemList.Count-1);
+			
 	}
 	
-	
-	public void SaveInventory(){
-		PlayerPrefs.SetString("Inventory", list);
-	}
-	
-	
-	public void AddItem(){
-		items.Add("item");
-	}
-	
-	
-	void UseItem(){
-	
+
+
+
+	public void UseItem(int index){print("CALLED "+index);
+		itemList[index].GetComponent<Item>().Effect();
+		itemList[index].GetComponent<QuantityText>().q--;
+		itemList[index].GetComponent<InventoryText>().Remove();
 	}
 }

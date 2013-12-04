@@ -48,13 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Battle\BattleController.cs" />
      <Compile Include="Assets\Scripts\Battle\DamageTextScr.cs" />
-     <Compile Include="Assets\Scripts\Battle\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Battle\EnemyAttack.cs" />
-     <Compile Include="Assets\Scripts\Battle\EnemyMagic.cs" />
-     <Compile Include="Assets\Scripts\Battle\EnemySMachine.cs" />
-     <Compile Include="Assets\Scripts\Battle\EnemyWalk.cs" />
-     <Compile Include="Assets\Scripts\Battle\EnemyWeapon.cs" />
-     <Compile Include="Assets\Scripts\Battle\Magic.cs" />
+     <Compile Include="Assets\Scripts\Battle\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Battle\Enemy\EnemyWeapon.cs" />
+     <Compile Include="Assets\Scripts\Battle\Enemy\MagicE.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemySMachine\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemySMachine\EnemyMagic.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemySMachine\EnemySMachine.cs" />
+     <Compile Include="Assets\Scripts\Battle\EnemySMachine\EnemyWalk.cs" />
+     <Compile Include="Assets\Scripts\Battle\Magic\BlackMagic.cs" />
+     <Compile Include="Assets\Scripts\Battle\Magic\MPCost.cs" />
+     <Compile Include="Assets\Scripts\Battle\Magic\WhiteMagic.cs" />
      <Compile Include="Assets\Scripts\Battle\MovementBattle.cs" />
      <Compile Include="Assets\Scripts\Battle\Scroll.cs" />
      <Compile Include="Assets\Scripts\Battle\State.cs" />
@@ -65,6 +68,7 @@
      <Compile Include="Assets\Scripts\Extra\ButtonLevelUp.cs" />
      <Compile Include="Assets\Scripts\Extra\CharactersStat.cs" />
      <Compile Include="Assets\Scripts\Extra\Chest.cs" />
+     <Compile Include="Assets\Scripts\Extra\Chest2.cs" />
      <Compile Include="Assets\Scripts\Extra\DialogueText.cs" />
      <Compile Include="Assets\Scripts\Extra\DungeonManager.cs" />
      <Compile Include="Assets\Scripts\Extra\FadeInOut.cs" />
@@ -72,9 +76,14 @@
      <Compile Include="Assets\Scripts\Extra\LevelUp.cs" />
      <Compile Include="Assets\Scripts\Extra\TestGameSave.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Inventory\kk.cs" />
+     <Compile Include="Assets\Scripts\Inventory\InventoryText.cs" />
+     <Compile Include="Assets\Scripts\Inventory\QuantityText.cs" />
+     <Compile Include="Assets\Scripts\Items\Egg.cs" />
      <Compile Include="Assets\Scripts\Items\IronSword.cs" />
+     <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Items\LightSword.cs" />
+     <Compile Include="Assets\Scripts\Items\ManaPotion.cs" />
+     <Compile Include="Assets\Scripts\Items\Potion.cs" />
      <Compile Include="Assets\Scripts\Items\WoodenSword.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ExitGameButton.cs" />
      <Compile Include="Assets\Scripts\MainMenu\LoadGameButton.cs" />
@@ -86,17 +95,30 @@
      <Compile Include="Assets\Scripts\Overworld\Menu.cs" />
      <Compile Include="Assets\Scripts\Overworld\MovementWorld.cs" />
      <Compile Include="Assets\Scripts\Overworld\OverWordGUI.cs" />
-     <Compile Include="Assets\Scripts\ScenesIndexes.cs" />
+     <Compile Include="Assets\Scripts\Raycaster.cs" />
+     <Compile Include="Assets\Scripts\Shop\BackButtonShop.cs" />
+     <Compile Include="Assets\Scripts\Shop\BuyButton.cs" />
+     <Compile Include="Assets\Scripts\Shop\BuyList.cs" />
+     <Compile Include="Assets\Scripts\Shop\SellButton.cs" />
+     <Compile Include="Assets\Scripts\Shop\SellList.cs" />
+     <Compile Include="Assets\Scripts\Shop\ShowItemTextBuy.cs" />
      <Compile Include="Assets\Scripts\Transitions\BattleSMachine.cs" />
      <Compile Include="Assets\Scripts\Transitions\Bridge.cs" />
      <Compile Include="Assets\Scripts\Transitions\ExitBattle.cs" />
      <Compile Include="Assets\Scripts\Transitions\StateBattle.cs" />
      <Compile Include="Assets\Scripts\Transitions\Text.cs" />
-     <Compile Include="Assets\Scripts\juan\JuanAttack.cs" />
-     <Compile Include="Assets\Scripts\juan\JuanMovement.cs" />
-     <Compile Include="Assets\Scripts\juan\JuanTriggerDamage.cs" />
+     <None Include="Assets\Plugins\Easy Save 2\readme.txt" />
+     <None Include="Assets\Plugins\Easy Save 2\link.xml" />
+ <Reference Include="Elixis">
+ <HintPath>Assets\Plugins\Easy Save 2\Libraries\Elixis.dll</HintPath>
+ </Reference>
+ <Reference Include="ES2">
+ <HintPath>Assets\Plugins\Easy Save 2\Libraries\ES2.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{60FF69C5-FB93-DB0D-E4B0-6B9EF11DA4B3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{BB8C729D-4D7B-776F-D180-698EE7D10A85}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
