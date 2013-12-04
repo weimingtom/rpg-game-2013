@@ -25,6 +25,8 @@ public class MovementWorld : MonoBehaviour {
 	public GameObject overWorld;
 	public CharactersStat cs;
 	public GUIText text;
+	public Inventory inventory;
+	public GameObject shop;
 
 	void Start () {
 		movSpeed = walkSpeed;
@@ -52,7 +54,7 @@ public class MovementWorld : MonoBehaviour {
 		
 		if(Input.GetKeyDown(KeyCode.Return)){
 			menu.SetActive(true);
-			DesactiveWorld();
+			DeactiveWorld();
 			this.gameObject.SetActive(false);
 		}
 		
@@ -102,17 +104,36 @@ public class MovementWorld : MonoBehaviour {
 			dungeon.SetActive(false);
 		}
 	}
+
+
 	void OnTriggerStay(Collider coll){
 		if(coll.gameObject.tag.Equals("Chest")){
 			Chest chest = coll.gameObject.GetComponent(typeof(Chest)) as Chest;
-			if(Input.GetKeyDown(KeyCode.M) && !chest.opened){
+			if(Input.GetKeyDown(KeyCode.K) && !chest.opened){
 				cs.Gils += chest.gilsInChest;
 				chest.opened = true;
 				text.text = "Obtained "+chest.gilsInChest+" Gils!";
 			}
 		}
+		if(coll.gameObject.tag.Equals("Chest2")){
+			Chest2 chest = coll.gameObject.GetComponent(typeof(Chest2)) as Chest2;
+			if(Input.GetKeyDown(KeyCode.K) && !chest.opened){
+				inventory.AddItem(chest.itemInChest);
+				chest.opened = true;
+				text.text = "Obtained "+chest.itemInChest.name+"!";
+			}
+		}
+		if(coll.gameObject.tag.Equals("Seller")){
+			if(Input.GetKeyDown(KeyCode.K)){
+				shop.SetActive(true);
+				DeactiveWorld();
+				this.gameObject.SetActive(false);
+			}
+		}
 	}
-	void DesactiveWorld(){
+
+
+	void DeactiveWorld(){
 		if(currentWorld == "Overworld"){
 			emptyWorld.SetActive(false);
 		}else if(currentWorld == "Dungeon"){

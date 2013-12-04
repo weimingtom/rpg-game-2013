@@ -23,6 +23,7 @@ public class CharactersStat : MonoBehaviour {
 	void Start(){
 		prevToNextLvl = toLvlExp;
 	}
+
 	public void LevelUp(){
 		if(toLvlExp <= 0){
 			lvl ++;

@@ -47,6 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <None Include="Assets\Plugins\Easy Save 2\readme.txt" />
+     <None Include="Assets\Plugins\Easy Save 2\link.xml" />
+ <Reference Include="Elixis">
+ <HintPath>Assets\Plugins\Easy Save 2\Libraries\Elixis.dll</HintPath>
+ </Reference>
+ <Reference Include="ES2">
+ <HintPath>Assets\Plugins\Easy Save 2\Libraries\ES2.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
