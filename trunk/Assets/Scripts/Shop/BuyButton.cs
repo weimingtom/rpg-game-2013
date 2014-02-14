@@ -11,6 +11,7 @@ public class BuyButton : MonoBehaviour {
 		this.guiTexture.color = Color.gray;
 	}
 	void OnMouseDown(){
+		GameObject.FindWithTag("BackShopButton").GetComponent<BackButtonShop>().BuySell = true;
 		buyList.SetActive (true);
 		buyList.GetComponent<BuyList>().ShowList();
 		sellbutton.gameObject.SetActive (false);

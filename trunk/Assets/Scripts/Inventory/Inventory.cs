@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour {
 
 	public GameObject menu;
 
+
 	void Start(){
 		if(ES2.Exists("Inventory"))
 		   ES2.LoadList<GameObject>("Inventory");
@@ -28,7 +29,7 @@ public class Inventory : MonoBehaviour {
 
 
 	public void AddItem(GameObject item){
-		for(int i = 0; i < itemList.Count; i++){print ("FOR"+itemList[i].name+" "+item.name);
+		for(int i = 0; i < itemList.Count; i++){
 			if(itemList[i].name == item.name){
 				itemList[i].GetComponent<QuantityText>().q++;
 				itemList[i].GetComponent<InventoryText>().Add();
@@ -52,7 +53,8 @@ public class Inventory : MonoBehaviour {
 		itemList.Add(newItem.gameObject);
 		itemList[itemList.Count-1].GetComponent<QuantityText>().q = 1;
 		itemList[itemList.Count-1].AddComponent(item.name);
-
+		itemList[itemList.Count-1].GetComponent<Item>().priceBuy = item.GetComponent<Item>().priceBuy;
+		itemList[itemList.Count-1].GetComponent<Item>().priceSell = item.GetComponent<Item>().priceSell;
 		newItem.GetComponent<InventoryText>().SetItem(item, itemList.Count-1);
 			
 	}
@@ -60,9 +62,21 @@ public class Inventory : MonoBehaviour {
 
 
 
-	public void UseItem(int index){print("CALLED "+index);
+	public void UseItem(int index){
 		itemList[index].GetComponent<Item>().Effect();
 		itemList[index].GetComponent<QuantityText>().q--;
 		itemList[index].GetComponent<InventoryText>().Remove();
+	}
+
+
+	public void EquipItem(int index){
+			for(int i = 0; i < itemList.Count; i++){
+				if(itemList[i].GetComponent<Item>().equipable){
+					itemList[i].GetComponent<Sword>().Dequip();
+					itemList[i].GetComponent<TextMesh>().renderer.material.color = Color.white;
+				}
+			}
+			itemList[index].GetComponent<Sword>().Equip();
+			itemList[index].GetComponent<TextMesh>().renderer.material.color = Color.blue;
 	}
 }

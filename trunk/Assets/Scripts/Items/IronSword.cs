@@ -1,23 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IronSword : MonoBehaviour {
-
-	int bonus = 7;
-	GameObject stat;
-	
+public class IronSword : Sword {
 	
 	void Start(){
-		stat = GameObject.FindWithTag("Stats");
+		bonus = 7;
 	}
-	
-	
-	void Equip() {
-		stat.GetComponent<CharactersStat>().att += bonus;
-	}
-	
-	
-	void Dequip() {
-		stat.GetComponent<CharactersStat>().att -= bonus;
-	}
+
 }
