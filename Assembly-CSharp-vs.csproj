@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\Items\LightSword.cs" />
      <Compile Include="Assets\Scripts\Items\ManaPotion.cs" />
      <Compile Include="Assets\Scripts\Items\Potion.cs" />
+     <Compile Include="Assets\Scripts\Items\Sword.cs" />
      <Compile Include="Assets\Scripts\Items\WoodenSword.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ExitGameButton.cs" />
      <Compile Include="Assets\Scripts\MainMenu\LoadGameButton.cs" />
@@ -99,9 +100,11 @@
      <Compile Include="Assets\Scripts\Shop\BackButtonShop.cs" />
      <Compile Include="Assets\Scripts\Shop\BuyButton.cs" />
      <Compile Include="Assets\Scripts\Shop\BuyList.cs" />
+     <Compile Include="Assets\Scripts\Shop\PlayerGils.cs" />
      <Compile Include="Assets\Scripts\Shop\SellButton.cs" />
      <Compile Include="Assets\Scripts\Shop\SellList.cs" />
      <Compile Include="Assets\Scripts\Shop\ShowItemTextBuy.cs" />
+     <Compile Include="Assets\Scripts\Shop\ShowItemTextSell.cs" />
      <Compile Include="Assets\Scripts\Transitions\BattleSMachine.cs" />
      <Compile Include="Assets\Scripts\Transitions\Bridge.cs" />
      <Compile Include="Assets\Scripts\Transitions\ExitBattle.cs" />

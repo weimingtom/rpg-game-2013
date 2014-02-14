@@ -30,7 +30,7 @@ public class MovementWorld : MonoBehaviour {
 
 	void Start () {
 		movSpeed = walkSpeed;
-		randEncounterTime = Random.Range(7,15);
+		randEncounterTime = Random.Range(4,12);
 		menu.SetActive(false);
 	}
 	
@@ -83,7 +83,7 @@ public class MovementWorld : MonoBehaviour {
 				this.enabled = false;
 			}
 		}else{
-			randEncounterTime = Random.Range(7,15);
+			randEncounterTime = Random.Range(4,12);
 		}
 
 	}

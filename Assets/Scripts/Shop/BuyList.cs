@@ -9,7 +9,7 @@ public class BuyList : MonoBehaviour {
 	public List<GameObject> buyList = new List<GameObject>();
 	GUIText showItem;
 	public Inventory inventory;
-	public GUIText gils;
+	//public GUIText gils;
 	// Use this for initialization
 	void Start () {
 
@@ -17,7 +17,7 @@ public class BuyList : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gils.text = "Gils: "+ GameObject.FindWithTag("Stats").GetComponent<CharactersStat>().Gils;
+		//gils.text = "Gils: "+ GameObject.FindWithTag("Stats").GetComponent<CharactersStat>().Gils;
 	}
 	public void ShowList(){
 		float offsetNextItem = 0f;

@@ -15,13 +15,17 @@ public class CharactersStat : MonoBehaviour {
 	public int Gils = 0;
 	public int toLvlExp = 300;
 	public int critical;
-	public GUIText charGUI;
+	//public GUIText charGUI;
 	string Status = "Normal";
 	int prevToNextLvl;
 	public bool leveledUp = false;
 	
 	void Start(){
 		prevToNextLvl = toLvlExp;
+	}
+	void Update(){
+		if(hp>maxHP) hp=maxHP;
+		if(mp>maxMP) mp=maxMP;
 	}
 
 	public void LevelUp(){

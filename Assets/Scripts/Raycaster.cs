@@ -18,8 +18,12 @@ public class Raycaster : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit)){
 				if(hit.transform.tag == "Item"){
 					for(int i = 0; i<inventory.itemList.Count; i++){
-						if(inventory.itemList[i] == hit.transform.gameObject)
-							inventory.UseItem(i);
+						if(inventory.itemList[i] == hit.transform.gameObject){
+							if(inventory.itemList[i].GetComponent<Item>().equipable)
+								inventory.EquipItem(i);
+							else
+							   inventory.UseItem(i);
+						}
 					}
 				}
 			}

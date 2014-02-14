@@ -1,23 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WoodenSword : MonoBehaviour {
-
-	int bonus = 2;
-	GameObject stat;
-
+public class WoodenSword : Sword {
 
 	void Start(){
-		stat = GameObject.FindWithTag("Stats");
+		bonus = 2;
 	}
 
-
-	void Equip() {
-		stat.GetComponent<CharactersStat>().att += bonus;
-	}
-	
-
-	void Dequip() {
-		stat.GetComponent<CharactersStat>().att -= bonus;
-	}
 }
